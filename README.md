@@ -10,7 +10,7 @@ The super-user api key should be removed from the users.yml file for a new insta
 
 ### OS/Ansible versions
 
-This is being tested on Ubuntu 16.04.3 LTS and Ansible 2.4.
+Currently only Ubuntu is supported. This is being tested on Ubuntu 16.04.3 LTS and Ansible 2.4.
 
 ### Server credentials
 
@@ -59,8 +59,8 @@ ubuntu
 Two users are built, one super-admin and one admin in the default organization.  The configuration for these users is in:
 
 ```
-inventory/tyk_dashboard/users.yml
-inventory/tyk_dashboard/organisation.yml
+inventory/group_vars/tyk_dashboard/users.yml
+inventory/group_vars/tyk_dashboard/organisation.yml
 ```
 
 ### Building the example python middleware
@@ -82,7 +82,7 @@ A role called site_config exists which may contain changes and/or software speci
 ### Usage
 
 ```shell
-➜  tyk-ansible git:(master) ✗ ansible-playbook -i inventory site.yml
+➜  tyk-ansible git:(master) ✗ ansible-playbook -i inventory/inventory.txt site.yml
 
 PLAY [all] *********************************************************************
 
